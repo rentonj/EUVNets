@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_newNetwork_name": {
+            "defaultValue": "newNetwork",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/82ceca36-10d8-4a8e-820d-5db64b8950a4/resourceGroups/NewNetworks/providers/Microsoft.Network/virtualNetworks/newNetwork'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_newNetwork_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "1.1.1.0/24"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "255.255.255.0",
+                        "properties": {
+                            "addressPrefix": "1.1.1.0/25"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        }
+    ]
+}
